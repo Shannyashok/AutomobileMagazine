@@ -1,0 +1,1395 @@
+
+/*IMAGE STYLES==========================*/
+
+img {
+	vertical-align: middle;
+    border: none;
+}
+
+/*LINK STYLES==========================*/
+
+a:link, a:visited {
+	color: #0078ae;
+}
+
+a:hover, a:active {
+	color: #355678;
+}
+
+/*PAGE BREAK STYLES==========================*/
+
+div.breakafter {
+    page-break-after: always;
+}
+
+div.breakbefore {
+    page-break-before: always;
+}
+
+/*GENERAL LAYOUT STYLES==========================*/
+
+body {
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 11px;
+	color: #373737;
+	padding: 0px;
+	margin: 0px;
+}
+
+#headImg {
+	background-image: url(../images/header-BG.gif);
+	padding-left: 7px;
+	padding-right: 7px;
+}
+
+#headImg table {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+#headImg td.headleft {
+	text-align: left;
+}
+
+#headImg td.headright {
+    text-align: right;
+    vertical-align: top;
+}
+
+#head #links a {
+	color: #999999;
+	font-size: 11px;
+	font-weight: bold;
+	text-decoration: none;
+}
+#headImg #links a {
+	color: #FFFFFF;
+	font-size: 11px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#headImg #poweredby {
+	padding-top: 10px;
+	font-size: 10px;
+	color: #000000;
+}
+#head {
+	/*background-image: url(../images/header-bkgnd.jpg);*/
+	padding-left: 7px;
+	padding-right: 7px;
+}
+
+#head table {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+#head td.headleft {
+	text-align: left;
+}
+
+#head td.headright {
+    text-align: right;
+    vertical-align: top;
+}
+
+#headImg #links, #head #links a {
+	color: #999999;
+	font-size: 11px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#head #poweredby {
+	padding-top: 10px;
+	font-size: 10px;
+	color: #000000;
+}
+
+#cpltopmenu 
+{
+	display: inline;
+}
+
+#topmenu {
+	margin-top: 5px;
+	font-weight: bold;
+	font-family: Verdana;
+	/*padding: 5px;
+	border-top: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+
+	background-color: #000099;*/
+	/*background-image: url(../images/header-bkgnd.jpg);*/
+}
+
+#topmenu ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+#topmenu ul.right {
+    float: right;
+}
+
+#topmenu li {
+	display:inline;
+}
+
+#topmenu a {
+	padding:2px 8px 2px 8px;
+	border-right:1px solid #0078ae;
+	margin:0px;
+	text-decoration: none;
+	color: #ffffff;
+}
+
+#topmenu ul.right a {
+	border-right: none;
+}
+
+#topmenu li a:hover, #topmenu li a:active, #topmenu li.active {
+    text-transform: uppercase;
+}
+
+#atopmenu {
+	margin-top: 5px;
+	font-weight: bold;
+	font-family: Verdana;
+	padding: 5px;
+	border-top: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+
+	background-color: #000099;
+	/*background-image: url(../images/header-bkgnd.jpg);*/
+}
+
+#atopmenu ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+#atopmenu ul.right {
+    float: right;
+}
+
+#atopmenu li {
+	display:inline;
+}
+
+#atopmenu a {
+	padding:2px 8px 2px 8px;
+	border-right:1px solid #0078ae;
+	margin:0px;
+	text-decoration: none;
+	color: #ffffff;
+}
+
+#atopmenu ul.right a {
+	border-right: none;
+}
+
+#atopmenu li a:hover, #atopmenu li a:active, #atopmenu li.active {
+    text-transform: uppercase;
+}
+
+table#main {
+	width: 100%;
+}
+
+table#main td#left {
+	width: 250px;
+	background-color: #E3E0CD;
+ 	vertical-align: top;
+ 	padding-left: 5px;
+    padding-right: 10px;
+}
+
+table#main td#right {
+	vertical-align: top;
+	padding: 20px 10px 10px 10px;
+}
+
+#actor {
+	color: #0078ae;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: small;
+    font-style: italic;
+}
+
+.sidemenu {
+	margin-left: 20px;
+	margin-top: 15px;
+	margin-bottom: 10px;
+}
+
+.sidemenutitle {
+	background-color:#43474A;
+	margin-left: -20px;
+	font-size: 12px;
+	font-weight: bold;
+	color:#FFFFFF;
+	text-align: left;
+	padding: 5px 0px 4px 8px;
+	border-top: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+}
+
+.sidemenu ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+.sidemenu ul.level1 {
+    margin-top: 5px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-weight: normal;
+}
+
+.sidemenu ul.level2 {
+    margin-left: 10px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-weight: normal;
+}
+
+.sidemenu ul.level3 {
+    margin-left: 10px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-weight: normal;
+}
+
+.sidemenu ul.level4 {
+    margin-left: 10px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-weight: normal;
+}
+
+.sidemenu ul.level5 {
+    margin-left: 10px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-weight: normal;
+}
+
+.sidemenu li {
+	margin-top: 5px;
+}
+
+.sidemenu li a:link.active, .sidemenu li a:visited.active {
+	color: #355678;
+}
+
+.sideinfo {
+	margin-left: 20px;
+	margin-top: 15px;
+	margin-bottom: 10px;
+}
+
+.sideinfotitle {
+	background-color:#43474A;
+	color:#FFFFFF;
+	font-size:12px;
+	font-weight:bold;
+	margin-left:-20px;
+	padding:5px 0 4px 8px;
+	text-align:left;
+}
+
+.sideinfotitle_orig {
+	margin-left: -20px;
+	font-size: 12px;
+    font-weight: normal;
+    color: #ff9100;
+    text-align: left;
+    padding: 5px 0px 4px 8px;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+}
+
+.sideinfohelp {
+    float: right;
+    margin-left: 5px;
+}
+
+.sideinfo>table {
+	margin-top: 8px;
+}
+
+div.pagetitle {
+	font-family: Verdana;
+	font-size: 18px;
+    padding-right: 10px;
+}
+
+
+table.pagetitle {
+	width: 100%;
+    padding: 0px;
+}
+
+table.pagetitle td.title {
+	color: #727272;
+	text-align: left;
+    vertical-align: middle;
+}
+
+table.pagetitle td.subtitle {
+	text-align: right;
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+.sectiontitle_old {
+	padding: 5px 0px 4px 8px;
+	margin-top: 20px;
+	margin-bottom: 8px;
+	font-size: 12px;
+	color: #ff9100;
+	border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+}
+
+.sectiontitle {
+	background-color:#666666;
+	border-bottom:1px solid #CCCCCC;
+	border-top:1px solid #CCCCCC;
+	/*color:#FF9100;*/
+	color:#FFFFFF;
+	font-size:12px;
+	font-weight:bold;
+	margin-bottom:8px;
+	margin-top:20px;
+	padding:5px 0 4px 8px;
+}
+
+.sectiontitleOrange {
+	background-color:#FF9200;
+	border-bottom:1px solid #CCCCCC;
+	border-top:1px solid #CCCCCC;
+	color:#FFFFFF;
+	font-size:12px;
+	font-weight:bold;
+	margin-bottom:8px;
+	margin-top:20px;
+	padding:5px 0 4px 8px;
+}
+
+.sectiontitleright {
+    float: right;
+    margin-left: 5px;
+    margin-top: 2px;
+    font-size: 10px;
+}
+
+a.sectiontitlelink {
+	color:#FFFFFF;
+	text-decoration:none;
+}
+
+a:hover.sectiontitlerightlink, a:active.sectiontitlerightlink, a:link.sectiontitlerightlink, a:visited.sectiontitlerightlink {
+	color: #ff9100;
+	text-decoration: none;
+}
+
+a:hover.sectiontitlesublink, a:active.sectiontitlesublink, a:link.sectiontitlesublink, a:visited.sectiontitlesublink {
+    color: #ff9100;
+    text-decoration: none;
+    font-size: 10px;
+}
+
+div.pagination {
+    margin-top: 5px;
+    text-align: right;
+}
+
+span.pagination {
+    padding-left: 5px;
+}
+
+a:hover.sectiontitlelink, a:active.sectiontitlelink, a:link.sectiontitlelink, a:visited.sectiontitlelink {
+	text-decoration: none;
+}
+
+#footer {
+	padding: 10px;
+	border-top: 1px solid #cccccc;
+	text-align: center;
+}
+
+.industryheading {
+	font-size: small;
+	font-weight: bold;
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+
+.buttons {
+	text-align: center;
+    padding: 10px;
+}
+
+#professional {}
+
+#questionnaire {
+	text-align: right;
+    color: black;
+    font-size: medium;
+	font-weight: bold;
+    font-style: italic;
+    float: right;
+    padding-top: 10px;
+}
+
+#collegelogo {
+	text-align: right;
+    color: black;
+    font-size: medium;
+	font-weight: bold;
+    font-style: italic;
+    float: right;
+    padding-top: 10px;
+}
+
+#regname {
+	text-align: right;
+    color: black;
+    font-size: medium;
+	font-weight: bold;
+    font-style: italic;
+    padding-top: 10px;
+}
+
+.modified {
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.warn {
+	color: red;
+	font-weight: bold;
+}
+
+.good {
+	color: green;
+}
+
+.bad {
+	color: red;
+}
+
+form {
+	padding: 0px;
+    margin: 0px;
+}
+
+input {
+    font-size: x-small;
+}
+
+select {
+    font-size: x-small;
+}
+
+select.type {
+	width: 200px;}
+
+select.regulator {
+	width: 200px;}
+
+select.regulator_n {
+	width: 175px;}
+
+td.coursetitle {
+    font-size: small;
+    font-weight: bold;
+    color: #000099;
+}
+
+ol.schedule li {
+    margin: 0px;
+    padding: 0px;
+
+    text-aligh: right;
+}
+
+table.faculty {
+	width: 100%;
+}
+
+.facultymember {
+	font-weight: bold;
+}
+
+dt {
+	font-weight: bold;
+}
+
+p {
+	margin-top: 1em;
+}
+
+/*HELP AND CALENDAR POP UPS ==============================================*/
+
+a.help, a.calendar {
+    position:relative; /*this is the key*/
+    z-index:24;
+    vertical-align: top;}
+
+a.help:hover, a.calendar:hover {z-index:25;}
+
+a.help span, a.calendar span {display: none}
+
+a.help:hover span, a.calendar:hover span { /*the span will display just on :hover state*/
+    display:block;
+    position:absolute;
+    top:2em; left:2em; width:30em;
+    color: black;
+    text-decoration: none;
+    font-size: x-small;
+    font-weight: normal;
+    padding: 5px;
+    border:1px solid #000;
+    background-color:#F0F0F0;
+}
+
+a.calendar:hover span {
+	width: 200%;
+}
+
+
+/*DATA TABLE FORMATTING =====================================*/
+
+table.data {
+	width:100%;
+}
+
+table.data a:link, table.data a:visited {
+	text-decoration: underline;
+}
+
+table.data a:hover, table.data a:active {
+}
+
+table.data a.disabled:link, table.data a.disabled:visited, table.data a.disabled:hover, table.data a.disabled:active {
+	color: gray;
+}
+
+table.data td {
+	color: #222222;
+	padding-top: 2px;
+	padding-bottom: 2px;
+    padding-right: 4px;
+    padding-left: 4px;
+}
+
+table.data thead td {
+	background-color:#BABABA;
+	border-color:#333333 white #333333 #333333;
+	border-style:solid;
+	border-width:1px;
+}
+
+table.data thead a:link, table.data thead a:visited {
+	color: white;
+}
+
+table.data thead a:hover, table.data thead a:active {
+	color:#F9B026;
+}
+
+table.data tbody tr.rowodd td {
+	background-color: white;
+}
+
+table.data tbody tr.roweven td {
+	background-color:#eeeeee;
+}
+
+table.data tbody td div.regitem {
+	font-size: x-small;
+}
+
+table.data tfoot td {
+	color: white;
+	border: 1px solid #333333;
+    border-right: 1px solid white;
+	background-color:#666666;
+}
+
+table.data span.more {
+	color: #ff9100; 
+	text-decoration: underline;
+}
+
+/*Accreditation Table =====================================*/
+table.data td.regulators {
+    width: 15%;
+    font-weight: bold;
+    vertical-align: top;
+    padding-top: 6px;
+}
+
+table.data td.attributes {
+    width: 25%;
+    vertical-align: top;
+}
+
+table.data td.categories {
+    width: 30%;
+    vertical-align: top;
+}
+
+table.data td.properties {
+    width: 30%;
+    vertical-align: top;
+}
+
+table.data td.attributes table, table.data td.categories table, table.data td.properties table {
+    width: 100%;
+}
+
+table.data td.attributes table td.label, table.data td.categories table td.label, table.data td.properties table td.label {
+    vertical-align: top;
+}
+
+table.data td.attributes table td.output, table.data td.categories table td.output, table.data td.properties table td.output {
+    vertical-align: bottom;
+}
+
+table.data td.attributes table td.input, table.data td.categories table td.input, table.data td.properties table td.input {
+    vertical-align: bottom;
+}
+
+table.data td.attributes table td.label {
+    width: 30%;
+}
+
+table.data td.categories table td.label {
+    width: 80%;
+}
+
+table.data td.properties table td.label {
+    width: 60%;
+}
+
+/*INPUT FORM TABLE FORMATTING =====================================*/
+
+table.inputform td.label, table.inputform td.input, table.inputform td.output {
+	padding: 2px;
+}
+
+table.inputform td.label, table.inputform td.warn {
+	text-align: left;
+	font-weight: bold;
+	width: 200px;
+}
+table.inputform td.label-warning {
+	color:red;
+	text-align: left;
+	font-weight: bold;
+	width: 200px;
+}
+
+table.inputform td.output-warning {
+	color:red;
+	text-align: left;
+	width: 200px;
+}
+
+
+
+table.radio-check td {
+        padding-top: 5px;
+}
+
+/*SIGN-IN SHEET TABLE FORMATTING =====================================*/
+
+table.signin {
+	width: 100%;
+}
+
+table.signin thead td {
+        font-weight: bold;
+}
+
+table.signin tbody td {
+        padding-right: 5px;
+        padding-top: 15px;
+        border-bottom: 1px solid black;
+}
+
+
+/*DUAL LIST TABLE FORMATTING =====================================*/
+
+
+table.duallist td {
+	padding: 2px;
+}
+
+table.duallist thead td {
+	font-weight: bold;
+}
+
+table.duallist thead td.left {
+	font-weight: bold;
+        color: red;
+}
+
+table.duallist thead td.right {
+	font-weight: bold;
+        color: green;
+}
+
+table.duallist td.left {
+	width: 200px;
+}
+
+table.duallist td.center {
+	width: 50px;
+        text-align: center;
+}
+
+table.duallist td.right {
+	width: 200px;
+}
+
+table.duallist td.right select {
+	width: 200px;
+}
+
+table.duallist td.left select {
+	width: 200px;
+}
+
+/*STATUS REPORT FORMATTING =====================================*/
+
+table.statusreport {
+	width: 100%;
+}
+
+table.statusreport td {
+    padding: 3px;
+    border: 1px solid white;
+}
+
+table.statusreport thead td {
+	color: white;
+	border: 1px solid #white;
+	background-color:#666666;
+    font-weight: normal;
+}
+
+table.statusreport tfoot td {
+    font-weight: bold;
+    border: 1px solid white;
+    background-color: #b9b9b9;
+}
+
+table.statusreport tbody tr.rowodd {
+	background-color: white;
+}
+
+table.statusreport tbody tr.roweven {
+	background-color: #eeeeee;
+}
+
+table.statusreport tbody tr#pending .accreditation {
+    font-style: italic;
+}
+
+table.statusreport td.details {
+	text-align: left;
+}
+
+tr.type_none{
+	text-align: left;
+	background-color: yellow;
+}
+
+table.statusreport td.accreditation {
+	text-align: center;
+}
+
+table.statusreport td.totaldue {
+	text-align: center;
+	background-color: #ff9100;
+}
+
+table.statusreportprofile {
+	width: 100%
+}
+
+table.statusreportprofile td.profileitems {
+	text-align: right;
+}
+
+table.statusreportprofile .regulator {
+	font-weight: bold;
+    font-size: medium;
+}
+
+table.statusreportprofile .industry {
+
+}
+
+table.statusreport#summary td {
+    text-align: center;
+    font-weight: bold;
+}
+
+table.statusreport#summary tbody td {
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-bottom: 1px solid black;
+    margin: 0px;
+    color: #000099;
+}
+
+table.statusreport#summary tbody .label {
+    color: black;
+    text-align: left;
+}
+
+.CENote {
+    margin-right: 5px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.CENoteTitle {
+    font-weight: bold;
+    text-decoration: underline;
+    margin-left: -5px;
+}
+
+.statusreportquestion {
+	margin-top: 20px;
+	margin-bottom: 10px;
+    font-weight: bold;
+}
+
+
+/*OLD ARCHIVED STATUS REPORT FORMATTING =====================================*/
+
+fieldset {
+    margin-left: 0px;
+    padding-left: 0px;
+	border: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+legend {
+    margin-left: 0px;
+    padding-left: 0px;
+    width: 100%;
+	padding-bottom: 2px;
+	margin-top: 20px;
+	margin-bottom: 5px;
+	border-bottom: 4px solid #000000;
+	font-family: Trebuchet MS, Arial, Helvetica, sans-serif;
+	font-size: medium;
+	color: #333333;
+	font-weight: bold;
+}
+
+table.statusreportprofile col.profileitems{
+	text-align: right;
+}
+
+/*CERTIFICATE FORMATTING =====================================*/
+
+table.sigblock {
+	width: 100%
+}
+
+.certificaterule {
+	font-size: x-small;
+        margin-top: 5px;
+}
+
+#educatorlogo {
+	text-align: right;
+        color: black;
+        font-size: medium;
+	font-weight: bold;
+        font-style: italic;
+        float: right;
+        padding-top: 10px;
+}
+
+/*Calendar ========================================================*/
+
+table.calendar {
+	width: 100%;
+}
+
+table.calendar td {
+	width: 14%;
+	padding: 0;
+}
+
+table.calendar thead td {
+	color: white;
+	border: 1px solid #333333;
+	background-color:#666666;
+	text-align: center;
+}
+
+table.calendar tbody tr {
+	height: 50px;
+}
+
+table.calendar tbody td {
+	border: 1px black solid;
+	vertical-align: top;
+}
+
+div.date {
+	font-weight: bold;
+	background-color: #c0c0c0;
+	text-align: right;
+	padding: 2px;
+}
+
+div.event {
+	padding: 3px;
+}
+
+div.eventdetails {
+    margin-left: 10px;
+}
+
+/*Learning Plans =============================================*/
+
+/*no action*/
+.LPStatus_1 {
+	color: black;
+}
+
+/*registered*/
+.LPStatus_2 {
+	color: blue;
+}
+
+/*in progress*/
+.LPStatus_3 {
+	color: blue;
+}
+
+/*completed*/
+.LPStatus_4 {
+	color: green;
+}
+
+/*waived*/
+.LPStatus_5 {
+	color: green;
+}
+
+/*suspended*/
+.LPStatus_6 {
+	color: green;
+}
+
+/*VA Certificates =============================================*/
+
+div.VACert {
+font-family: "Times New Roman", Times, serif;
+font-size: 12px;
+}
+
+table.VACert {
+}
+
+table.VACert tbody td.response {
+border-bottom: 1px #000000 solid;
+}
+
+table.VACert tbody td.center {
+text-align: center;
+}
+
+div.VACertH1 {
+font-size: 22px;
+}
+
+div.VACertH2 {
+font-size: 20px;
+}
+
+div.VACertH3 {
+font-size: 16px;
+}
+
+div.VACertH4 {
+font-size: 14px;
+}
+
+div.VACertH5 {
+font-size: 12px;
+}
+
+/*NASBA Certificates =============================================*/
+
+table.cert_nasba {
+width: 100%;
+font-size:x- small;
+}
+
+table.cert_nasba td {
+padding: 0px;
+}
+
+table.cert_nasba td.warn {
+padding: 0px;
+color: #ff0000;
+}
+
+table.cert_nasba col.category {
+font-weight: bold;
+width: 40%;
+}
+
+table.cert_nasba col.credit {
+width: 10%;
+}
+
+/*NASBA2006 Certificates =============================================*/
+
+table.cert_nasba2006 {
+width: 100%;
+font-size: x-small;
+}
+
+table.cert_nasba2006 td {
+padding: 2px;
+}
+
+table.cert_nasba2006 td.warn {
+padding: 0px;
+color: #ff0000;
+}
+
+table.cert_nasba2006 col.category {
+font-weight: bold;
+width: 20%;
+}
+
+table.cert_nasba2006 col.credit {
+width: 5%;
+}
+
+/*NYTeach Certificates =============================================*/
+
+table.cert_NYTeach {
+width: 100%;
+font-size: x-small;
+}
+
+table.cert_NYTeach td {
+padding: 0px;
+}
+
+table.cert_NYTeach td.warn {
+padding: 0px;
+color: #ff0000;
+}
+
+table.cert_NYTeach col.category {
+font-weight: bold;
+width: 40%;
+}
+
+table.cert_NYTeach col.credit {
+width: 10%;
+text-align: center;
+}
+
+/*NY End of Year Report =============================================*/
+
+table.NY2004SumRptHead {
+font-size: 11px;
+font-weight: normal;
+width: 750px;
+}
+
+table.NY2004SumRptHead td.request {
+font-weight: bold;
+vertical-align: top;
+}
+
+table.NY2004SumRptHead td.response {
+border-bottom: 1px #000000 solid;
+vertical-align: bottom;
+}
+
+table.NY2004SumRpt {
+font-size: 11px;
+font-weight: normal;
+width: 750px;
+}
+
+table.NY2004SumRpt td.request {
+font-weight: bold;
+vertical-align: top;
+}
+
+table.NY2004SumRpt td.response {
+border-bottom: 1px #000000 solid;
+text-align: center;
+vertical-align: bottom;
+}
+
+table.NY2004SubRpt {
+font-weight: normal;
+width:70%;
+}
+
+table.NY2004SubRpt td.request {
+font-weight: bold;
+vertical-align: top;
+}
+
+table.NY2004SubRpt td.response {
+border-bottom: 1px #000000 solid;
+text-align: center;
+vertical-align: bottom;
+}
+
+table.NY2004RptTable {
+font-size: 11px;;
+font-weight: normal;
+vertical-align: top;
+border-top: 1px #000000 solid;
+border-bottom: 1px #000000 solid;
+border-right: 1px #000000 solid;
+border-left: 1px #000000 solid;
+width: 100%
+}
+
+table.NY2004RptTable thead{
+font-weight: bold;
+text-align: center;
+}
+
+table.NY2004RptTable thead td{
+border-top: 2px #000000 solid;
+border-bottom: 2px #000000 solid;
+border-right: 1px #000000 solid;
+border-left: 1px #000000 solid;
+}
+
+table.NY2004RptTable td.infotop {
+border-top: 1px #000000 solid;
+border-left: 1px #000000 solid;
+border-right: 1px #000000 solid;
+}
+
+table.NY2004RptTable td.info {
+border-left: 1px #000000 solid;
+border-right: 1px #000000 solid;
+}
+
+table.NY2004RptTable td.infobottom1 {
+border-bottom: 1px #000000 solid;
+border-left: 1px #000000 solid;
+}
+
+table.NY2004RptTable td.infobottom2 {
+border-bottom: 1px #000000 solid;
+border-right: 1px #000000 solid;
+}
+
+table.NY2004RptTable td.request {
+border-top: 1px #000000 solid;
+border-bottom: 1px #000000 solid;
+border-right: 1px #000000 solid;
+border-left: 1px #000000 solid;
+background-color: #c0c0c0;
+}
+
+table.NY2004RptTable td.response {
+border-top: 1px #000000 solid;
+border-bottom: 1px #000000 solid;
+border-right: 1px #000000 solid;
+border-left: 1px #000000 solid;
+text-align: center;
+}
+
+table.NY2004RptTable td.responsex {
+border-top: 1px #000000 solid;
+border-bottom: 1px #000000 solid;
+border-right: 1px #000000 solid;
+border-left: 1px #000000 solid;
+}
+
+div.headbox {
+border-top: 1px #000000 solid;
+border-bottom: 1px #000000 solid;
+border-right: 1px #000000 solid;
+border-left: 1px #000000 solid;
+margin-top: 5px;
+margin-bottom: 5px;
+font-size: .8em;
+padding: 5px;
+}
+
+.fleft { 
+	float:left;
+	margin-right:5px;
+}
+
+table.learningTitle {
+	width: 100%;
+    padding: 0px;
+    height:30px;
+}
+
+table.learningTitle td.title {
+	color: #727272;
+	text-align: left;
+    vertical-align: top;
+     height:30px;
+}
+.instructionTextForSections {
+	font-size: 11px;
+	color: black;
+}
+
+/**** Professional table data formating ****/
+
+table.professionalData {
+	width:100%;
+}
+
+table.professionalData a:link, table.professionalData a:visited {
+	text-decoration: underline;
+}
+
+table.professionalData a:hover, table.professionalData a:active {
+}
+
+table.professionalData a.disabled:link, table.professionalData a.disabled:visited, table.professionalData a.disabled:hover, table.professionalData a.disabled:active {
+	color: gray;
+}
+
+table.professionalData td {
+	color: #222222;
+	padding-top: 2px;
+	padding-bottom: 2px;
+    padding-right: 4px;
+    padding-left: 4px;
+}
+
+table.professionalData thead td {
+	background-color:#BABABA;
+	border-color:#333333 white #333333 #333333;
+	border-style:solid;
+	border-width:1px;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+table.professionalData thead a:link, table.professionalData thead a:visited {
+	color: white;
+}
+
+table.professionalData thead a:hover, table.professionalData thead a:active {
+	color:#F9B026;
+}
+
+table.professionalData tbody tr.rowodd td {
+	background-color: white;
+}
+
+table.professionalData tbody tr.roweven td {
+	background-color:#eeeeee;
+}
+
+table.professionalData tbody td div.regitem {
+	font-size: x-small;
+}
+
+table.professionalData tfoot td {
+	color: white;
+	border: 1px solid #333333;
+    border-right: 1px solid white;
+	background-color:#666666;
+}
+
+table.professionalData span.more {
+	color: #ff9100; 
+	text-decoration: underline;
+}
+
+/*Accreditation Table =====================================*/
+table.professionalData td.regulators {
+    width: 15%;
+    font-weight: bold;
+    vertical-align: top;
+    padding-top: 6px;
+}
+
+table.professionalData td.attributes {
+    width: 25%;
+    vertical-align: top;
+}
+
+table.professionalData td.categories {
+    width: 30%;
+    vertical-align: top;
+}
+
+table.professionalData td.properties {
+    width: 30%;
+    vertical-align: top;
+}
+
+table.professionalData td.attributes table, table.professionalData td.categories table, table.professionalData td.properties table {
+    width: 100%;
+}
+
+table.professionalData td.attributes table td.label, table.professionalData td.categories table td.label, table.professionalData td.properties table td.label {
+    vertical-align: top;
+}
+
+table.professionalData td.attributes table td.output, table.professionalData td.categories table td.output, table.professionalData td.properties table td.output {
+    vertical-align: bottom;
+}
+
+table.professionalData td.attributes table td.input, table.professionalData td.categories table td.input, table.professionalData td.properties table td.input {
+    vertical-align: bottom;
+}
+
+table.professionalData td.attributes table td.label {
+    width: 30%;
+}
+
+table.professionalData td.categories table td.label {
+    width: 80%;
+}
+
+table.professionalData td.properties table td.label {
+    width: 60%;
+}
+
+/**** End of Professional table data formating ****/
+

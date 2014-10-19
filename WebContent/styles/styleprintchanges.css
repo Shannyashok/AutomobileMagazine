@@ -1,0 +1,132 @@
+
+
+
+/*LINK STYLES==========================*/
+
+a:hover, a:active, a:link, a:visited {
+	color: black;
+	text-decoration: none;
+}
+
+
+/*GENERAL LAYOUT STYLES==========================*/
+
+#head {
+        display: none;
+}
+
+#headImg {
+        display: none;
+}
+
+#cpltopmenu {
+	display: none;
+}
+
+#topmenu {
+	display: none;
+}
+
+#footer {
+	display: none;
+}
+
+table#main td#left {
+	display: none;
+}
+
+.noprint {
+	display: none;
+}
+
+/*DATA TABLE FORMATTING =====================================*/
+
+table.data {
+	width:100%;
+}
+
+table.data a:link, table.data a:visited, table.data a:hover, table.data a:active {
+	color: black;
+	text-decoration: none;
+}
+
+table.data a.disabled:link, table.data a.disabled:visited, table.data a.disabled:hover, table.data a.disabled:active {
+	color: gray;
+}
+
+table.data td {
+	border-bottom: 1px solid black;
+}
+
+table.data thead td {
+	color: black;
+	border: 1px solid black;
+        border-right: 1px solid black;
+	background-color: white;
+}
+
+table.data thead a:link, table.data thead a:visited, table.data thead a:hover, table.data thead a:active{
+	color: black;
+	font-size: 12px;
+}
+
+table.data tbody tr.roweven td {
+	background-color: white;
+}
+
+table.data tbody td div.regulator {
+	font-weight: bold;
+        margin-bottom: 5px;
+}
+
+table.data tbody td div.regitem {
+	font-size: x-small;
+}
+
+table.data tfoot td {
+	color: black;
+	border: 1px solid black;
+        border-right: 1px solid black;
+	background-color: white;
+}
+
+
+/*STATUS REPORT FORMATTING =====================================*/
+
+table.statusreport {
+        border: 1px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+table.statusreport td {
+        padding: 3px;
+        border: none;
+}
+
+table.statusreport td a {
+	text-decoration: none;
+        color: black;
+}
+
+table.statusreport thead td {
+	border: 1px solid black;
+	background-color: white;
+        font-weight: bold;
+}
+
+table.statusreport tfoot td {
+        border: 1px solid black;
+	background-color: white;
+}
+
+table.statusreport tbody tr.rowodd td, table.statusreport tbody tr.rowodd td a{
+	color: gray;
+}
+
+
+table.statusreport td.totaldue {
+	text-align: center;
+	background-color: white;
+        border: 5px;
+}
+

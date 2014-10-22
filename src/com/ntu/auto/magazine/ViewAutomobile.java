@@ -1,7 +1,6 @@
 package com.ntu.auto.magazine;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,16 +14,16 @@ import com.ntu.auto.magazine.dao.AutomobileDaoImpl;
 import com.ntu.auto.magazine.model.Advertisement;
 
 /**
- * Servlet implementation class BuyAutomobileServlet
+ * Servlet implementation class ViewAutomobile
  */
-@WebServlet(name = "buyAutomobile", urlPatterns = { "/buyAutomobile" })
-public class BuyAutomobileServlet extends HttpServlet {
+@WebServlet(name = "viewAutomobile", urlPatterns = { "/viewAutomobile" })
+public class ViewAutomobile extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BuyAutomobileServlet() {
+    public ViewAutomobile() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,17 +32,19 @@ public class BuyAutomobileServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request,response);
+		doPost(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String action = request.getParameter("action");
+		long advId = Long.valueOf(request.getParameter("advId")).longValue();
 		AutomobileDao automobileDao = new AutomobileDaoImpl();
-		List<Advertisement> advList = automobileDao.getAllAdvertisements();
-		request.setAttribute("advList", advList);
-		RequestDispatcher dispatcher  = request.getRequestDispatcher("buyAutomobile.jsp");
+		Advertisement adv = automobileDao.getAdvertisementById(advId);
+		request.setAttribute("adv", adv);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("viewAutomobile.jsp");
 		dispatcher.forward(request, response);
 	}
 

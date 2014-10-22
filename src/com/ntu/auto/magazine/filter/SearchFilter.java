@@ -12,6 +12,18 @@ public class SearchFilter {
 	private String mileage; 
 	private String price;
 	
+	public SearchFilter() {
+		super();
+		this.make = "";
+		this.makeYear = "";
+		this.registeredYear = "";
+		this.model = "";
+		this.category = "";
+		this.engineCapacity = "";
+		this.gear = "";
+		this.mileage = "";
+		this.price = "";
+	}
 	public String getMake() {
 		return make;
 	}

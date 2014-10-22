@@ -1,30 +1,27 @@
 package com.ntu.auto.magazine;
 
 import java.io.IOException;
-import java.util.List;
+import java.io.InputStream;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.ntu.auto.magazine.dao.AutomobileDao;
-import com.ntu.auto.magazine.dao.AutomobileDaoImpl;
-import com.ntu.auto.magazine.model.Advertisement;
+import org.apache.commons.io.IOUtils;
 
 /**
- * Servlet implementation class BuyAutomobileServlet
+ * Servlet implementation class DispalyImageServlet
  */
-@WebServlet(name = "buyAutomobile", urlPatterns = { "/buyAutomobile" })
-public class BuyAutomobileServlet extends HttpServlet {
+@WebServlet(name = "dispalyImageServlet", urlPatterns = { "/dispalyImageServlet" })
+public class DispalyImageServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BuyAutomobileServlet() {
+    public DispalyImageServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,18 +30,30 @@ public class BuyAutomobileServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request,response);
+		doPost(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		AutomobileDao automobileDao = new AutomobileDaoImpl();
-		List<Advertisement> advList = automobileDao.getAllAdvertisements();
-		request.setAttribute("advList", advList);
-		RequestDispatcher dispatcher  = request.getRequestDispatcher("buyAutomobile.jsp");
-		dispatcher.forward(request, response);
+		
+		InputStream photo = (InputStream)request.getAttribute("photo");
+		byte[] bytes;
+		if(photo != null){
+			try{
+			bytes = IOUtils.toByteArray(photo);
+			response.setContentType("image/jpg");
+			response.setContentLength(bytes.length);
+		    response.getOutputStream().write(bytes);
+		    response.getOutputStream().flush();
+		    response.getOutputStream().close();
+		    photo.close();
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		}
+		//request.getSession().removeAttribute("photo");
+		bytes = null;
 	}
-
 }

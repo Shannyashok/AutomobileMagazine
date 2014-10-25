@@ -22,18 +22,18 @@
 			 width : 900px;
 		}
 		.pageLeftMenu{
-			 background-color : rgb(255, 255, 255);
 			 float : left;
 			 clear : none;
 			 height : 650px;
 			 width : 300px;
+			 background-color : NavajoWhite;
 		}
 		.pageContent{
-			 background-color : rgb(255, 255, 255);
 			 float : left;
 			 clear : none;
 			 height : 650px;
 			 width : 600px;
+			 background-color : BlanchedAlmond;
 		}
 		.pageFooter{
 			 background-color : rgb(255, 255, 255);
@@ -47,13 +47,14 @@
 		}
 	 </style>
 	 </head>
-<body bgcolor="AntiqueWhite">
+<body bgcolor="LightBlue">
 <div class="blended_grid">
 	  <div class="pageHeader">
 	   <jsp:include page="/header.jsp"></jsp:include>
 	  </div>
 	  <div class="pageContent">
 	  <div class="pagetitle" align="center">
+	  <br/>
 	  ABOUT US
 	  </div>
 	  <p>

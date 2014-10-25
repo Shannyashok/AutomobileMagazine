@@ -8,7 +8,7 @@
 <link type="text/css" rel="stylesheet" href="styles/styleprint.css" media="print">
 <title>Image Upload Utility</title>
 </head>
-<body>
+<body bgcolor="LightBlue">
 <div class="sectiontitle" align="center">
 Image Upload Utility
 </div>

@@ -22,11 +22,11 @@ height : 50px;
 width : 900px;
 }
 .middleBanner{
-background-color : rgb(255, 255, 255);
 float : left;
 clear : none;
 height : 650px;
 width : 900px;
+background-color : BlanchedAlmond;
 }
 .bottomBanner{
 background-color : rgb(255, 255, 255);
@@ -56,13 +56,14 @@ function openFileUpload() {
 }
 </script>
 <jsp:useBean id="adv" class="com.ntu.auto.magazine.model.Advertisement" scope="request"></jsp:useBean>
-<body bgcolor="Bisque">
+<body bgcolor="LightBlue">
 <div class="blended_grid">
 <div class="topBanner">
 <jsp:include page="/header.jsp"></jsp:include>
 </div>
 <div class="middleBanner">
 <div class="pagetitle" align="center">
+<br/>
 Post your Advertisement
 </div>
 <form action="sellAutomobile" method="post" enctype="multipart/form-data">
@@ -78,6 +79,9 @@ Post your Advertisement
 	</td>
 	</tr>
 	<%} %>
+ <tr>
+ 	<td colspan="2">&nbsp;</td>
+ </tr>
  <tr>
  	<td>Name*</td>
  	<td><input type="text" id="name" name="name" value=<%=adv.getName() %>></td>

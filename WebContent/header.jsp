@@ -1,6 +1,6 @@
-<table border="2px" width="100%">
+<table width="100%">
 <tr>
-<td width="50%">NTU Automobile Magazine</td>
+<td width="50%"><img src="images/logo_ntu_car.png" alt="NTU car mart" width="446px" height="50px"/></td>
 <td width="10%" align="center"><a href="./homePage">Home</a></td>
 <td width="10%" align="center"><a href="./buyAutomobile">Buy</a></td>
 <td width="10%" align="center"><a href="./sellAutomobile?action=view">Sell</a></td>

@@ -30,6 +30,7 @@ float : left;
 clear : none;
 height : 100px;
 width : 900px;
+background-color : NavajoWhite;
 }
 .leftBanner{
 background-color : rgb(255, 255, 255);
@@ -37,6 +38,14 @@ clear : none;
 height : 550px;
 width : 900px;
 overflow : auto;
+background-color : BlanchedAlmond;
+}
+.pagination{
+background-color : rgb(255, 255, 255);
+float : left;
+clear : none;
+height : 20px;
+width : 900px;
 }
 .bottomBanner{
 background-color : rgb(255, 255, 255);
@@ -45,14 +54,23 @@ clear : none;
 height : 25px;
 width : 900px;
 }
-img{
-		padding:1px;
-		border:1px solid #021a40;
-		background-color:#FFF8DC;
-		}
+
+.pg-normal {
+color: black;
+font-weight: normal;
+text-decoration: none;    
+cursor: pointer;    
+}
+.pg-selected {
+color: black;
+font-weight: bold;        
+text-decoration: underline;
+cursor: pointer;
+}
 </style>
+<script type="text/javascript" src="js/paging.js"></script>
 </head>
-<body bgcolor="BlanchedAlmond">
+<body bgcolor="LightBlue">
 <%
 List<Advertisement> advList = (List<Advertisement>)request.getAttribute("advList");
 %>
@@ -61,14 +79,15 @@ List<Advertisement> advList = (List<Advertisement>)request.getAttribute("advList
 <jsp:include page="/header.jsp"></jsp:include>
 </div>
 <div class="middleBanner">
+<br/>
 <jsp:include page="/searchAutomobile.jsp" flush="true"></jsp:include>
 </div>
 <div class="leftBanner">
-<table class="data" align="center" cellpadding="2pt" cellspacing="2pt" border="2px"> 
+<table id="results" class="data" align="center" border="1px"> 
 	<thead>
 		<tr>
-			<td width="30%">Photo</td>
-			<td width="70%">Summary</td>
+			<td width="30%" align="center"><b>Photo</b></td>
+			<td width="70%" align="center"><b>Summary</b></td>
 		</tr>
 	</thead>
 	<tbody>
@@ -90,6 +109,13 @@ List<Advertisement> advList = (List<Advertisement>)request.getAttribute("advList
 			if(file.length() > 0){
 				String imgUrl = "http://localhost:8080/NTUAutoMag/uploadPhotos/"+Long.valueOf(adv.getAdvId()).toString()+"/"+file;
 				%>
+				<!-- 
+				<div style="width:200px;display:block;position:relative">
+				 <a href="./viewAutomobile?advId=<%=adv.getAdvId() %>"><img src="<%=imgUrl %>" width="200px" height="100px"></img>
+				 	<img src="images/sold_tag.gif" width="80" height="30" style="position:absolute; top:0px; right:0px" />
+				</a>
+				</div>
+				 -->
 				 <a href="./viewAutomobile?advId=<%=adv.getAdvId() %>"><img src="<%=imgUrl %>" width="200px" height="100px"></img></a>
 				<%
 			}
@@ -150,9 +176,16 @@ List<Advertisement> advList = (List<Advertisement>)request.getAttribute("advList
 	</tbody>
 </table>
 </div>
+<div id="pageNavPosition" class="pagination"></div>
 <div class="bottomBanner">
 <jsp:include page="/footer.jsp"></jsp:include>
 </div>
 </div>
+<script type="text/javascript"><!--
+        var pager = new Pager('results', 4); 
+        pager.init(); 
+        pager.showPageNav('pager', 'pageNavPosition'); 
+        pager.showPage(1);
+    //--></script>
 </body>
 </html>

@@ -30,7 +30,7 @@ public class AutomobileDaoImpl implements AutomobileDao {
 		con = DataSourceUtil.getConnection();
 		if(con != null){
 			try{
-				pst = con.prepareStatement("SELECT adv_id,name,email,contact,address,location,title,make,model,model_no,make_year,reg_year,price,photo1,photo2,photo3,photo4,additional_info,approved,post_dt,publish_dt,category,engine_capacity,gear,mileage FROM advertisement");
+				pst = con.prepareStatement("SELECT adv_id,name,email,contact,address,location,title,make,model,model_no,make_year,reg_year,price,photo1,photo2,photo3,photo4,additional_info,approved,post_dt,publish_dt,category,engine_capacity,gear,mileage,available FROM advertisement");
 				rst = pst.executeQuery();
 				while(rst.next()){
 					Advertisement adv = new Advertisement();
@@ -59,6 +59,7 @@ public class AutomobileDaoImpl implements AutomobileDao {
 					adv.setGear(rst.getString("gear"));
 					adv.setEngineCapacity(rst.getInt("engine_capacity"));
 					adv.setMileage(rst.getInt("mileage"));
+					adv.setAvailable(rst.getInt("available"));
 					advList.add(adv);
 				}
 			}catch(Exception e){
@@ -80,7 +81,7 @@ public class AutomobileDaoImpl implements AutomobileDao {
 		con = DataSourceUtil.getConnection();
 		if(con != null){
 			try{
-				pst = con.prepareStatement("SELECT adv_id,name,email,contact,address,location,title,make,model,model_no,make_year,reg_year,price,photo1,photo2,photo3,photo4,additional_info,approved,post_dt,publish_dt,category,engine_capacity,gear,mileage FROM advertisement  WHERE publish_dt is not null order by publish_dt limit 0,4");
+				pst = con.prepareStatement("SELECT adv_id,name,email,contact,address,location,title,make,model,model_no,make_year,reg_year,price,photo1,photo2,photo3,photo4,additional_info,approved,post_dt,publish_dt,category,engine_capacity,gear,mileage,available FROM advertisement  WHERE publish_dt is not null order by publish_dt limit 0,4");
 				rst = pst.executeQuery();
 				while(rst.next()){
 					Advertisement adv = new Advertisement();
@@ -109,6 +110,7 @@ public class AutomobileDaoImpl implements AutomobileDao {
 					adv.setGear(rst.getString("gear"));
 					adv.setEngineCapacity(rst.getInt("engine_capacity"));
 					adv.setMileage(rst.getInt("mileage"));
+					adv.setAvailable(rst.getInt("available"));
 					advList.add(adv);
 				}
 			}catch(Exception e){
@@ -130,7 +132,7 @@ public class AutomobileDaoImpl implements AutomobileDao {
 		Advertisement adv = new Advertisement();
 		if(con != null){
 			try{
-				pst = con.prepareStatement("SELECT adv_id,name,email,contact,address,location,title,make,model,model_no,make_year,reg_year,price,photo1,photo2,photo3,photo4,additional_info,approved,post_dt,publish_dt,category,engine_capacity,gear,mileage FROM advertisement WHERE adv_id=?");
+				pst = con.prepareStatement("SELECT adv_id,name,email,contact,address,location,title,make,model,model_no,make_year,reg_year,price,photo1,photo2,photo3,photo4,additional_info,approved,post_dt,publish_dt,category,engine_capacity,gear,mileage,available FROM advertisement WHERE adv_id=?");
 				pst.setLong(1, advId);
 				rst = pst.executeQuery();
 				while(rst.next()){
@@ -158,6 +160,7 @@ public class AutomobileDaoImpl implements AutomobileDao {
 					adv.setCategory(rst.getString("category"));
 					adv.setGear(rst.getString("gear"));
 					adv.setEngineCapacity(rst.getInt("engine_capacity"));
+					adv.setAvailable(rst.getInt("available"));
 					adv.setMileage(rst.getInt("mileage"));
 				}
 			}catch(Exception e){
@@ -178,8 +181,8 @@ public class AutomobileDaoImpl implements AutomobileDao {
 	public void addAdvertisement(Advertisement adv) {
 		con = DataSourceUtil.getConnection();
 		//long advId = getNextAdvId();
-		String sql ="INSERT INTO advertisement(adv_id,name,email,contact,address,location,title,make,model,model_no,make_year,reg_year,price,photo1,photo2,photo3,photo4,additional_info,approved,post_dt,category,engine_capacity,gear,mileage)"
-				+ " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,NOW(),?,?,?,?)";
+		String sql ="INSERT INTO advertisement(adv_id,name,email,contact,address,location,title,make,model,model_no,make_year,reg_year,price,photo1,photo2,photo3,photo4,additional_info,approved,post_dt,category,engine_capacity,gear,mileage,available)"
+				+ " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,NOW(),?,?,?,?,?)";
 		if(con != null){
 			try{
 				pst = con.prepareStatement(sql);
@@ -206,6 +209,7 @@ public class AutomobileDaoImpl implements AutomobileDao {
 				pst.setInt(21, adv.getEngineCapacity());
 				pst.setString(22, adv.getGear());
 				pst.setInt(23, adv.getMileage());
+				pst.setInt(24, adv.getAvailable());
 				pst.executeUpdate();
 			}catch(Exception e){
 				e.printStackTrace();

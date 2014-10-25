@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body>
+<body bgcolor="LightBlue">
 <form action="testFileUpload" method="post" enctype="multipart/form-data">
 <input type="file" id="photo" name="photo"/>
 <input type="file" id="photo1" name="photo1"/>

@@ -11,6 +11,7 @@ public class SearchFilter {
 	private String gear;
 	private String mileage; 
 	private String price;
+	private String available;
 	
 	public SearchFilter() {
 		super();
@@ -23,6 +24,7 @@ public class SearchFilter {
 		this.gear = "";
 		this.mileage = "";
 		this.price = "";
+		this.available = "";
 	}
 	public String getMake() {
 		return make;
@@ -78,6 +80,12 @@ public class SearchFilter {
 	public void setPrice(String price) {
 		this.price = price;
 	}
+	public String getAvailable() {
+		return available;
+	}
+	public void setAvailable(String available) {
+		this.available = available;
+	}
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -99,6 +107,8 @@ public class SearchFilter {
 		builder.append(mileage);
 		builder.append(", price=");
 		builder.append(price);
+		builder.append(", available=");
+		builder.append(available);
 		builder.append("]");
 		return builder.toString();
 	}

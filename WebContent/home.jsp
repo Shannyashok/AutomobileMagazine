@@ -24,18 +24,18 @@
 			 width : 900px;
 		}
 		.pageLeftMenu{
-			 background-color : rgb(255, 255, 255);
 			 float : left;
 			 clear : none;
 			 height : 650px;
 			 width : 300px;
+			 background-color : NavajoWhite;
 		}
 		.pageContent{
-			 background-color : rgb(255, 255, 255);
 			 float : left;
 			 clear : none;
 			 height : 650px;
 			 width : 600px;
+			 background-color : BlanchedAlmond;
 		}
 		.pageFooter{
 			 background-color : rgb(255, 255, 255);
@@ -49,7 +49,7 @@
 		}
 	 </style>
 	 </head>
-<body bgcolor="NavajoWhite">
+<body bgcolor="LightBlue">
 <%
 List<Advertisement> advList = (List<Advertisement>)request.getAttribute("advList");
 %>

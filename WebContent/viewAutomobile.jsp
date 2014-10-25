@@ -32,7 +32,7 @@
 			 width : 450px;
 		}
 		.pageContent{
-			 background-color : rgb(255, 255, 255);
+			 background-color : BlanchedAlmond;
 			 float : left;
 			 clear : none;
 			 height : 450px;
@@ -57,10 +57,32 @@
 			font-style: bold;
 			font-size: 11px;
 		}
-		img{
+		.photo img {
 		padding:1px;
 		border:1px solid #021a40;
 		background-color:#ff0;
+		width :216px;
+		height :225px;
+		}
+		.fixeddiv {
+	    border: 1px solid #021a40;
+	    display: none;
+	    position: absolute;
+	    position:absolute;
+	    width:400px; /*image width */
+	    height:400px; /*image height */
+	    left:50%; 
+	    top:50%;
+	    margin-left:-250px; /*image width/2 */
+	    margin-top:-250px; /*image height/2 */
+		}
+		.photo:hover  .fixeddiv {
+		    display: block;
+		    }
+		.photo:hover  .fixeddiv img {
+		    display: block;
+		    width: 400px;
+		    height: 400px;
 		}
 </style>
 </head>
@@ -70,7 +92,7 @@ if(adv == null){
 	adv = new Advertisement();
 }
 %>
-<body bgcolor="Moccasin">
+<body bgcolor="LightBlue">
 <div class="blended_grid">
 	  <div class="pageHeader">
 	   <jsp:include page="/header.jsp"></jsp:include>
@@ -103,9 +125,13 @@ if(adv == null){
 	  </div>
 	  <div class="pageContent">
 	  <div align="center" class="pagetitle">
+	   <br/>
 	   <%=adv.getTitle() %>
 	  </div>
 	  	<table>
+	  				<tr>
+						<td colspan="2">&nbsp;</td>
+					</tr>
 					<tr>
 						<td><b>Category:</b></td>
 						<td><%=adv.getCategory() %></td>
@@ -189,9 +215,13 @@ if(adv == null){
 	  if(imgdir.exists() && imgdir.listFiles().length >0){
 	  for(File fi:imgdir.listFiles()){
 	  %>
-	  
 	  	<td>
-	  		<img src="<%=imglocation + fi.getName() %>" width="216px" height="225px" />
+	  	<div class="photo">
+	  	<img src="<%=imglocation + fi.getName() %>"  />
+	  	<div class="fixeddiv">
+	  		<img src="<%=imglocation + fi.getName() %>" />
+	  	</div>
+	  	</div>
 	  	</td>
 	  
 	  <%}}else{ %>

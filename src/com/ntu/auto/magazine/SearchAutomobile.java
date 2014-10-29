@@ -58,7 +58,7 @@ public class SearchAutomobile extends HttpServlet {
 			request.getSession().setAttribute("search", filter);
 		}*/
 		AutomobileDao automobileDao = new AutomobileDaoImpl();
-		List<Advertisement> advList = automobileDao.searchAdvertisements(filter);
+		List<Advertisement> advList = automobileDao.searchAdvertisements(filter, false);
 		request.setAttribute("advList", advList);
 		//request.getSession().setAttribute("search", filter);
 		request.setAttribute("search", filter);

@@ -39,8 +39,7 @@ public class ViewAutomobile extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String action = request.getParameter("action");
-		long advId = Long.valueOf(request.getParameter("advId")).longValue();
+		long advId = Long.valueOf(request.getParameter("advId")!=null ? request.getParameter("advId") : "-1" ).longValue();
 		AutomobileDao automobileDao = new AutomobileDaoImpl();
 		Advertisement adv = automobileDao.getAdvertisementById(advId);
 		request.setAttribute("adv", adv);

@@ -1,10 +1,6 @@
 package com.ntu.auto.magazine;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.Enumeration;
-import java.util.Iterator;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,11 +9,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
-
-import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.disk.DiskFileItemFactory;
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 import com.ntu.auto.magazine.dao.AutomobileDao;
 import com.ntu.auto.magazine.dao.AutomobileDaoImpl;
@@ -43,18 +34,23 @@ public class SellAutomobileServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request, response);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("sellAutomobile.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String action = request.getParameter("action");
-		if("add".equals(action))
+		long advId = Long.valueOf(request.getParameter("advId")!=null ?request.getParameter("advId") :"-1").longValue();
+		boolean isNew = false;
+		if(advId != -1)
 		{
 			AutomobileDao automobileDao = new AutomobileDaoImpl();
-			long advId = automobileDao.getNextAdvId();
+			if(advId == 0){
+				advId = automobileDao.getNextAdvId();
+				isNew = true;
+			}
 			Advertisement adv = new Advertisement();
 			adv.setAdvId(advId);
 			adv.setName(request.getParameter("name"));
@@ -68,22 +64,23 @@ public class SellAutomobileServlet extends HttpServlet {
 			adv.setModelNumber(request.getParameter("modelNumber"));
 			adv.setMakeYear(request.getParameter("makeYear"));
 			adv.setRegisteredYear(request.getParameter("registeredYear"));
-			adv.setPrice(Double.valueOf(request.getParameter("price")).doubleValue());
+			adv.setPrice(Double.valueOf(!"".equals(request.getParameter("price"))? request.getParameter("price") :"0.0").doubleValue());
 			adv.setAdditionalInfo(request.getParameter("additionalInfo"));
 			adv.setCategory(request.getParameter("category"));
-			adv.setEngineCapacity(Integer.valueOf(request.getParameter("engineCapacity")).intValue());
-			adv.setMileage(Integer.valueOf(request.getParameter("mileage")).intValue());
+			adv.setEngineCapacity(Integer.valueOf( !"".equals(request.getParameter("engineCapacity")) && request.getParameter("engineCapacity")!=null ? request.getParameter("engineCapacity") : "1" ).intValue());
+			adv.setMileage(Integer.valueOf( !"".equals(request.getParameter("mileage"))  && request.getParameter("mileage")!=null  ? request.getParameter("mileage") : "1" ).intValue());
 			adv.setGear(request.getParameter("gear"));
-			System.out.println("Before insert::"+adv);
-			/*Part photo1 = request.getPart("photo1");
-			System.out.println(photo1.getName());
-			adv.setPhoto1(photo1.getInputStream());*/
-			
+			adv.setAvailable(Integer.valueOf( !"".equals(request.getParameter("status"))  && request.getParameter("status")!=null ? request.getParameter("status") : "1" ).intValue());
 			
 			System.out.println(adv);
-			
-			automobileDao.addAdvertisement(adv);
-			request.setAttribute("msg", "Your post has been registered successfully");
+			if(isNew){
+				automobileDao.addAdvertisement(adv);
+				request.setAttribute("msg", "Your post has been registered successfully");
+			}else{
+				automobileDao.updateAdvertisement(adv);
+				request.setAttribute("adv", adv);
+				request.setAttribute("msg", "Your post has been updated successfully");
+			}
 		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher("sellAutomobile.jsp");
 		dispatcher.forward(request, response);

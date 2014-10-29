@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%response.sendRedirect("./homePage"); %>
+<%
+RequestDispatcher dispatcher = request.getRequestDispatcher("homePage");
+dispatcher.forward(request,response);
+%>
 </body>
 </html>

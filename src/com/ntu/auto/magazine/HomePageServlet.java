@@ -41,6 +41,9 @@ public class HomePageServlet extends HttpServlet {
 	 */
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		if(request.getSession().getAttribute("adminLogin")!=null){
+			request.getSession().removeAttribute("adminLogin");
+		}
 		AutomobileDao autoDao = new AutomobileDaoImpl();
 		List<Advertisement> advList = autoDao.getLatestAdvertisements();
 		request.setAttribute("advList", advList);

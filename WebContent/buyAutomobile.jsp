@@ -7,6 +7,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 <link type="text/css" rel="stylesheet" href="styles/style.css" media="screen">
 <link type="text/css" rel="stylesheet" href="styles/styleprint.css" media="print">
 <title>Buy Automobile</title>
@@ -28,7 +31,7 @@ width : 900px;
 background-color : rgb(255, 255, 255);
 float : left;
 clear : none;
-height : 100px;
+height : 110px;
 width : 900px;
 background-color : NavajoWhite;
 }
@@ -67,7 +70,23 @@ font-weight: bold;
 text-decoration: underline;
 cursor: pointer;
 }
+.ui-widget { font-family: Verdana; font-size: 11px; }
+.overflow{
+ height: 200px;
+ }
 </style>
+<script type="text/javascript">
+$(function() {
+    $( "#category" ).selectmenu({ width: 110 })
+    .selectmenu( "menuWidget" )
+    .addClass( "overflow" );
+    $( "#gear" ).selectmenu({ width: 110 });
+    $( "#status" ).selectmenu({ width: 110 });
+    $( "#make" ).selectmenu({ width: 110 })
+    .selectmenu( "menuWidget" )
+    .addClass( "overflow" );
+  });
+</script>
 <script type="text/javascript" src="js/paging.js"></script>
 </head>
 <body bgcolor="LightBlue">
@@ -108,16 +127,17 @@ List<Advertisement> advList = (List<Advertisement>)request.getAttribute("advList
 			  
 			if(file.length() > 0){
 				String imgUrl = "http://localhost:8080/NTUAutoMag/uploadPhotos/"+Long.valueOf(adv.getAdvId()).toString()+"/"+file;
+				if(adv.getAvailable() == 0){
 				%>
-				<!-- 
 				<div style="width:200px;display:block;position:relative">
 				 <a href="./viewAutomobile?advId=<%=adv.getAdvId() %>"><img src="<%=imgUrl %>" width="200px" height="100px"></img>
 				 	<img src="images/sold_tag.gif" width="80" height="30" style="position:absolute; top:0px; right:0px" />
 				</a>
 				</div>
-				 -->
+				 <%}else{ %>
 				 <a href="./viewAutomobile?advId=<%=adv.getAdvId() %>"><img src="<%=imgUrl %>" width="200px" height="100px"></img></a>
 				<%
+				 }
 			}
 			}
 			%>

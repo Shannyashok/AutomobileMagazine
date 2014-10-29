@@ -41,7 +41,8 @@ public class BuyAutomobileServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		AutomobileDao automobileDao = new AutomobileDaoImpl();
-		List<Advertisement> advList = automobileDao.getAllAdvertisements();
+		//List<Advertisement> advList = automobileDao.getAllAdvertisements();
+		List<Advertisement> advList = automobileDao.searchAdvertisements(null, false);
 		request.setAttribute("advList", advList);
 		RequestDispatcher dispatcher  = request.getRequestDispatcher("buyAutomobile.jsp");
 		dispatcher.forward(request, response);

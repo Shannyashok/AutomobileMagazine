@@ -11,7 +11,9 @@ public class SearchFilter {
 	private String gear;
 	private String mileage; 
 	private String price;
-	private String available;
+	private String status;
+	private String approved;
+	private String postDate;
 	
 	public SearchFilter() {
 		super();
@@ -24,7 +26,9 @@ public class SearchFilter {
 		this.gear = "";
 		this.mileage = "";
 		this.price = "";
-		this.available = "";
+		this.status = "";
+		this.approved = "";
+		this.postDate = "";
 	}
 	public String getMake() {
 		return make;
@@ -80,11 +84,23 @@ public class SearchFilter {
 	public void setPrice(String price) {
 		this.price = price;
 	}
-	public String getAvailable() {
-		return available;
+	public String getStatus() {
+		return status;
 	}
-	public void setAvailable(String available) {
-		this.available = available;
+	public void setStatus(String available) {
+		this.status = available;
+	}
+	public String getApproved() {
+		return approved;
+	}
+	public void setApproved(String approved) {
+		this.approved = approved;
+	}
+	public String getPostDate() {
+		return postDate;
+	}
+	public void setPostDate(String postDate) {
+		this.postDate = postDate;
 	}
 	@Override
 	public String toString() {
@@ -107,8 +123,12 @@ public class SearchFilter {
 		builder.append(mileage);
 		builder.append(", price=");
 		builder.append(price);
-		builder.append(", available=");
-		builder.append(available);
+		builder.append(", status=");
+		builder.append(status);
+		builder.append(", approved=");
+		builder.append(approved);
+		builder.append(", postDate=");
+		builder.append(postDate);
 		builder.append("]");
 		return builder.toString();
 	}

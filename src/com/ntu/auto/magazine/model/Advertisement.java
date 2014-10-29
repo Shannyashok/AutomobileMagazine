@@ -1,7 +1,6 @@
 package com.ntu.auto.magazine.model;
 
 import java.io.InputStream;
-import java.sql.Blob;
 import java.util.Date;
 
 public class Advertisement {
@@ -59,7 +58,7 @@ public class Advertisement {
 		this.engineCapacity = 0;
 		this.gear = "";
 		this.mileage = 0;
-		this.available = 0;
+		this.available = 1;
 	}
 	
 	public long getAdvId() {

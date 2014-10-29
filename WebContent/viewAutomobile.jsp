@@ -128,6 +128,19 @@ if(adv == null){
 	   <br/>
 	   <%=adv.getTitle() %>
 	  </div>
+	  <%if(session.getAttribute("adminLogin") != null){ %>
+	  <table align="right" class="inputform" cellpadding="2px" cellspacing="2px">
+					<tr>
+						<td><a href="./adminView?action=edit&advId=<%=adv.getAdvId() %>"><img src="images/pencil.png" height="16" width="16" title="Edit Post"/></a></td>
+						<td><a href="./adminView?action=delete&advId=<%=adv.getAdvId() %>"><img src="images/delete.png" height="16" width="16" title="Delete Post"/></a></td>
+						<%if(adv.getApproved() != 1){ %>
+						<td><a href="./adminView?action=publish&advId=<%=adv.getAdvId() %>"><img src="images/pub.gif" height="16" width="16" title="Publish Post"/></a></td>
+						<%}else{ %>
+						<td><a href="./adminView?action=unpublish&advId=<%=adv.getAdvId() %>"><img src="images/unpub.gif" height="16" width="16" title="Un-Publish Post"/></a></td>
+						<%} %>
+					</tr>
+				</table>
+	  <%} %>
 	  	<table>
 	  				<tr>
 						<td colspan="2">&nbsp;</td>

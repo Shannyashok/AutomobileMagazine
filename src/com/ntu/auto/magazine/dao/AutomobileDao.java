@@ -14,6 +14,8 @@ public interface AutomobileDao {
 	void updateAdvertisement(Advertisement adv);
 	void deleteAdvertisement(long advId);
 	long getNextAdvId();
-	List<Advertisement> searchAdvertisements(SearchFilter filter);
+	List<Advertisement> searchAdvertisements(SearchFilter filter, boolean isAdmin);
+	void publishAdvertisement(long advId);
+	void unPublishAdvertisement(long advId);
 	
 }

@@ -50,6 +50,12 @@
 		}
 	 </style>
 	 </head>
+	 <script type="text/javascript">
+	 function sayThanks(){
+		 alert('Thank you ! Your enquiry is submitted');
+		 return true;
+	 }
+	 </script>
 <body bgcolor="LightBlue">
 <div class="blended_grid">
 	  <div class="pageHeader">
@@ -90,7 +96,7 @@
 	  	Online Equiry
 	  </div>
 	  <hr/>
-	  <form action="#">
+	  <form action="enquiry" method="post" onsubmit="return sayThanks()">
 	  <table>
 	  	<tr>
 	  		<td width="300px">
@@ -98,13 +104,13 @@
 	  	<tr>
 	  		<td>Nature of Enquiry:
 	  		<br>
-	  		<select id="enquiry">
+	  		<select id="nature" name="nature">
 	  			<option selected>--Select One--</option>
-	  			<option>Sales Related</option>
-	  			<option>Technical Issues</option>
-	  			<option>General Feedback</option>
-	  			<option>Report Abuse</option>
-	  			<option>Suggestion</option>
+	  			<option value="Sales Related">Sales Related</option>
+	  			<option value="Technical Issues">Technical Issues</option>
+	  			<option value="General Feedback">General Feedback</option>
+	  			<option value="Report Abuse">Report Abuse</option>
+	  			<option value="Suggestion">Suggestion</option>
 	  		</select>
 	  		</br>
 	  		</td>
@@ -137,13 +143,13 @@
 	  				<tr>
 	  					<td>Comments:
 	  					<br>
-	  					<textarea rows="11" cols="40"></textarea>
+	  					<textarea rows="11" cols="40" id="comments" name="comments"></textarea>
 	  					</td>
 	  				</tr>
 	  				<tr>
 	  					<td colspan="2" align="right">
 	  					<input type="reset" value="RESET"/>
-	  					<input type="button" value="SUBMIT"/>
+	  					<input type="submit" value="SUBMIT"/>
 	  					</td>
 	  				</tr>
 	  			</table>

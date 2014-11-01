@@ -11,20 +11,19 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.ntu.auto.magazine.dao.AutomobileDao;
 import com.ntu.auto.magazine.dao.AutomobileDaoImpl;
-import com.ntu.auto.magazine.model.Advertisement;
-import com.ntu.auto.magazine.model.Seller;
+import com.ntu.auto.magazine.model.Enquiry;
 
 /**
- * Servlet implementation class ViewAutomobile
+ * Servlet implementation class EnquiryServlet
  */
-@WebServlet(name = "viewAutomobile", urlPatterns = { "/viewAutomobile" })
-public class ViewAutomobile extends HttpServlet {
+@WebServlet(name = "enquiry", urlPatterns = { "/enquiry" })
+public class EnquiryServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ViewAutomobile() {
+    public EnquiryServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -40,13 +39,15 @@ public class ViewAutomobile extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		long advId = Long.valueOf(request.getParameter("advId")!=null ? request.getParameter("advId") : "-1" ).longValue();
+		Enquiry enq = new Enquiry();
+		enq.setNature(request.getParameter("nature"));
+		enq.setName(request.getParameter("name"));
+		enq.setEmail(request.getParameter("email"));
+		enq.setContact(request.getParameter("contact"));
+		enq.setComments(request.getParameter("comments"));
 		AutomobileDao automobileDao = new AutomobileDaoImpl();
-		Advertisement adv = automobileDao.getAdvertisementById(advId);
-		Seller sell = automobileDao.getSellerById(adv.getSellerId());
-		request.setAttribute("adv", adv);
-		request.setAttribute("sell", sell);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("viewAutomobile.jsp");
+		automobileDao.addEnquiry(enq);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("contactUs.jsp");
 		dispatcher.forward(request, response);
 	}
 

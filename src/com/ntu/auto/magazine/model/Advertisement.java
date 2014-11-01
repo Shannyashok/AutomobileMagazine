@@ -31,6 +31,8 @@ public class Advertisement {
 	private String gear;
 	private int mileage;
 	private int available;
+	private int sellerId;
+	private String code;
 	
 	public Advertisement() {
 		this.advId = 0;
@@ -59,6 +61,8 @@ public class Advertisement {
 		this.gear = "";
 		this.mileage = 0;
 		this.available = 1;
+		this.sellerId = -1;
+		this.code = "";
 	}
 	
 	public long getAdvId() {
@@ -219,6 +223,21 @@ public class Advertisement {
 	public void setAvailable(int available) {
 		this.available = available;
 	}
+	public int getSellerId() {
+		return sellerId;
+	}
+
+	public void setSellerId(int sellerId) {
+		this.sellerId = sellerId;
+	}
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
 
 	@Override
 	public String toString() {
@@ -275,6 +294,10 @@ public class Advertisement {
 		builder.append(mileage);
 		builder.append(", available=");
 		builder.append(available);
+		builder.append(", sellerId=");
+		builder.append(sellerId);
+		builder.append(", code=");
+		builder.append(code);
 		builder.append("]");
 		return builder.toString();
 	}

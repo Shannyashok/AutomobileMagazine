@@ -1,3 +1,4 @@
+<%@page import="com.ntu.auto.magazine.model.Seller"%>
 <%@page import="java.io.File"%>
 <%@page import="com.ntu.auto.magazine.model.Advertisement"%>
 <%@page import="java.util.List"%>
@@ -88,8 +89,12 @@
 </head>
 <%
 Advertisement adv = (Advertisement)request.getAttribute("adv");
+Seller sell = (Seller)request.getAttribute("sell");
 if(adv == null){
 	adv = new Advertisement();
+}
+if(sell == null){
+	sell = new Seller();
 }
 %>
 <body bgcolor="LightBlue">
@@ -187,24 +192,28 @@ if(adv == null){
 					</p>
 					<table>
 					<tr>
+						<td><b>NRIC:</b></td>
+						<td><%=sell.getNric() %></td>
+					</tr>
+					<tr>
 						<td><b>Name:</b></td>
-						<td><%=adv.getName() %></td>
+						<td><%=sell.getName() %></td>
 					</tr>
 					<tr>
 						<td><b>Email:</b></td>
-						<td><%=adv.getEmail() %></td>
+						<td><%=sell.getEmail() %></td>
 					</tr>
 					<tr>
 						<td><b>Contact:</b></td>
-						<td><%=adv.getContact() %></td>
+						<td><%=sell.getContact() %></td>
 					</tr>
 					<tr>
 						<td><b>Address:</b></td>
-						<td><%=adv.getAddress() %></td>
+						<td><%=sell.getAddress() %></td>
 					</tr>
 					<tr>
 						<td><b>Location:</b></td>
-						<td><%=adv.getLocation() %></td>
+						<td><%=sell.getLocation() %></td>
 					</tr>
 					</table>
 					<p>

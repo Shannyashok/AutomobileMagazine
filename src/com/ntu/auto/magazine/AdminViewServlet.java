@@ -1,6 +1,7 @@
 package com.ntu.auto.magazine;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.ntu.auto.magazine.dao.AutomobileDao;
 import com.ntu.auto.magazine.dao.AutomobileDaoImpl;
 import com.ntu.auto.magazine.model.Advertisement;
+import com.ntu.auto.magazine.model.Package;
+import com.ntu.auto.magazine.model.Seller;
 
 /**
  * Servlet implementation class AdminViewServlet
@@ -45,13 +48,19 @@ public class AdminViewServlet extends HttpServlet {
 		RequestDispatcher dispatcher = null;
 		if("view".equals(action)){
 			Advertisement adv = automobileDao.getAdvertisementById(advId);
+			Seller sell = automobileDao.getSellerById(adv.getSellerId());
 			request.setAttribute("adv", adv);
+			request.setAttribute("sell", sell);
 			dispatcher = request.getRequestDispatcher("viewAutomobile.jsp");
 			dispatcher.forward(request, response);			
 		}
 		if("edit".equals(action)){
 			Advertisement adv = automobileDao.getAdvertisementById(advId);
+			Seller sell = automobileDao.getSellerById(adv.getSellerId());
+			List<Package> pkgs = automobileDao.getAllPackages();
 			request.setAttribute("adv", adv);
+			request.setAttribute("sell", sell);
+			request.setAttribute("pkgs", pkgs);
 			dispatcher = request.getRequestDispatcher("sellAutomobile.jsp");
 			dispatcher.forward(request, response);
 		}

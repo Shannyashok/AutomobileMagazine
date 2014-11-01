@@ -51,10 +51,11 @@ public class AdminLoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String userId = request.getParameter("user");
 		String password = request.getParameter("pwd");
+		AutomobileDao automobileDao = new AutomobileDaoImpl();
 		RequestDispatcher dispatcher = null;
 		if(userId != null && password !=null){
-			if("admin".equals(userId) && "password".equals(password)){
-				AutomobileDao automobileDao = new AutomobileDaoImpl();
+			String pwd = automobileDao.getAdminLogin(userId);
+			if(pwd != null && pwd.equals(password)){
 				List<Advertisement> advList = automobileDao.getAllAdvertisements();
 				request.setAttribute("advList", advList);
 				request.getSession().setAttribute("adminLogin", "admin");

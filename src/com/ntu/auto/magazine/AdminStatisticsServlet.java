@@ -11,20 +11,19 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.ntu.auto.magazine.dao.AutomobileDao;
 import com.ntu.auto.magazine.dao.AutomobileDaoImpl;
-import com.ntu.auto.magazine.model.Advertisement;
-import com.ntu.auto.magazine.model.Seller;
+import com.ntu.auto.magazine.model.AdvStatisticsHolder;
 
 /**
- * Servlet implementation class ViewAutomobile
+ * Servlet implementation class AdminStatisticsServlet
  */
-@WebServlet(name = "viewAutomobile", urlPatterns = { "/viewAutomobile" })
-public class ViewAutomobile extends HttpServlet {
+@WebServlet(name = "adminStatistics", urlPatterns = { "/adminStatistics" })
+public class AdminStatisticsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ViewAutomobile() {
+    public AdminStatisticsServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -40,13 +39,10 @@ public class ViewAutomobile extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		long advId = Long.valueOf(request.getParameter("advId")!=null ? request.getParameter("advId") : "-1" ).longValue();
 		AutomobileDao automobileDao = new AutomobileDaoImpl();
-		Advertisement adv = automobileDao.getAdvertisementById(advId);
-		Seller sell = automobileDao.getSellerById(adv.getSellerId());
-		request.setAttribute("adv", adv);
-		request.setAttribute("sell", sell);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("viewAutomobile.jsp");
+		AdvStatisticsHolder holder = automobileDao.getAdvertisementStatistics();
+		request.setAttribute("holder", holder);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("adminStatistics.jsp");
 		dispatcher.forward(request, response);
 	}
 

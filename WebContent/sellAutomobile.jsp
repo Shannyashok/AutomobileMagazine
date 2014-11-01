@@ -1,6 +1,9 @@
+<%@page import="com.ntu.auto.magazine.model.Package"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <jsp:useBean id="adv" class="com.ntu.auto.magazine.model.Advertisement" scope="request"></jsp:useBean>
+<jsp:useBean id="sell" class="com.ntu.auto.magazine.model.Seller" scope="request"></jsp:useBean>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -28,7 +31,7 @@ width : 900px;
 .middleBanner{
 float : left;
 clear : none;
-height : 700px;
+height : 720px;
 width : 900px;
 background-color : BlanchedAlmond;
 }
@@ -57,6 +60,7 @@ width : 900px;
 <script type="text/javascript">
 window.onload = function(){
 	document.getElementById("advId").value=<%=adv.getAdvId() %>;
+	document.getElementById("sellId").value=<%=sell.getSellerId() %>;
 }
 function submitForm(action){
 	document.getElementById("action").value=action;
@@ -85,12 +89,19 @@ $(function() {
     $( "#make" ).selectmenu({ width: 110 })
     .selectmenu( "menuWidget" )
     .addClass( "overflow" );
+    $( "#packageCode" ).selectmenu({ width: 200 });
   });
 function validateForm(){
 	var name = document.getElementById("name").value;
 	name = name.replace(/\s/g, '');
 	if(name == ''){
 		alert('Please enter Name');
+		return false;
+	}
+	var nric = document.getElementById("nric").value;
+	nric = nric.replace(/\s/g, '');
+	if(nric.length != 9){
+		alert('Please enter valid NRIC');
 		return false;
 	}
 	var email = document.getElementById("email").value;
@@ -143,9 +154,11 @@ Post your Advertisement
 <form action="sellAutomobile" method="post" enctype="multipart/form-data" onsubmit="return validateForm();">
 <input type="hidden" name="action" id="action">
 <input type="hidden" name="advId" id="advId">
+<input type="hidden" name="sellId" id="sellId">
 <table id="inputform" align="center">
 <%
 	String msg = (String)request.getAttribute("msg");
+	List<Package> pkgs = (List<Package>)request.getAttribute("pkgs");
 	if(msg!=null){
 	%>
 	<tr>
@@ -158,28 +171,47 @@ Post your Advertisement
  	<td colspan="2">&nbsp;</td>
  </tr>
  <tr>
+ 	<td>Package*</td>
+ 	<td>
+ 	<select id="packageCode" name="packageCode"  class=".ui-widget">
+ 	    <%if(pkgs.size() > 0) {
+ 	    	for(Package pkg:pkgs){
+ 	    %>
+ 		<option value="<%=pkg.getCode() %>" <%=(pkg.getCode().equals(adv.getCode())? "selected" : "" ) %> ><%=pkg.getName() %> - S$<%=pkg.getPrice() %></option>
+ 		<%}
+ 	    }else{ %>
+ 	    <option value="">---SELECT---</option>
+ 	    <%} %>
+ 	</select>
+ 	</td>
+ </tr>
+ <tr>
  	<td>Name*</td>
- 	<td><input type="text" id="name" name="name" value=<%=adv.getName() %>></td>
+ 	<td><input type="text" id="name" name="name" value=<%=sell.getName() %>></td>
+ </tr>
+ <tr>
+ 	<td>NRIC*</td>
+ 	<td><input type="text" id="nric" name="nric" value=<%=sell.getNric() %>></td>
  </tr>
  <tr>
  	<td>Email*</td>
- 	<td><input type="text" id="email" name="email" value=<%=adv.getEmail() %>></td>
+ 	<td><input type="text" id="email" name="email" value=<%=sell.getEmail() %>></td>
  </tr>
  <tr>
  	<td>Telephone*</td>
- 	<td><input type="text" id="contact" name="contact" value=<%=adv.getContact() %>></td>
+ 	<td><input type="text" id="contact" name="contact" value=<%=sell.getContact() %>></td>
  </tr>
  <tr>
  	<td>Address</td>
- 	<td><textarea rows="4" cols="20" id="address" name="address"><%=adv.getAddress() %></textarea></td>
+ 	<td><textarea rows="4" cols="20" id="address" name="address"><%=sell.getAddress() %></textarea></td>
  </tr>
  <tr>
  	<td>Location</td>
- 	<td><input type="text" id="location" name="location" value=<%=adv.getLocation() %>></td>
+ 	<td><input type="text" id="location" name="location" value=<%=sell.getLocation() %>></td>
  </tr>
  <tr>
  	<td>Title*</td>
- 	<td><input type="text" id="title" name="title" value=<%=adv.getLocation() %>></td>
+ 	<td><input type="text" id="title" name="title" value=<%=adv.getTitle() %>></td>
  </tr>
  <tr>
  	<td>Category*</td>

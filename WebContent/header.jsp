@@ -28,12 +28,12 @@ background-image: url(../images/bg.gif)!important;
 <%if(session.getAttribute("adminLogin") != null){ %>
 <table width="100%">
 <tr>
-<td width="50%"><img src="images/logo_ntu_car.png" alt="NTU car mart" width="446px" height="50px"/></td>
+<td width="50%" background='images/bg.gif'><img src="images/logo_ntu_car.png" alt="NTU car mart" width="446px" height="50px"/></td>
 <td width="10%" align="center" class="menu"><a href="./homePage">Web Home</a></td>
 <td width="10%" align="center" class="menu"><a href="./adminSearch">Search</a></td>
 <td width="10%" align="center" class="menu"><a href="./sellAutomobile">Post Adv.</a></td>
-<td width="10%" align="center" class="menu"><a href="./aboutUs.jsp">About</a></td>
-<td width="10%" align="center" class="menu"><a href="./contactUs.jsp">Contact</a></td>
+<td width="10%" align="center" class="menu"><a href="./adminPackage">Packages</a></td>
+<td width="10%" align="center" class="menu"><a href="./adminStatistics">Statistics</a></td>
 </tr>
 </table>
 <%}else{ %>
